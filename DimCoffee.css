@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    /* Gradient Kopi Minimalis */
+    background: linear-gradient(
+            to bottom right,
+            #4B3621,  /* Dark roast */
+            #6F4E37,  /* Espresso */
+            #3E2723   /* Hitam kecoklatan */
+    );
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.full-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px
+}
+.paragraphcontainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    color: rgb(240, 167, 48);
+}
+
+.paragraphcontainer > h1 {
+    font-weight: bold;
+    font-size: 3em;
+
+}
+
+.paragraphcontainer > a {
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    background-color: #f0a730; /* Warna oranye cerah */
+    color: #4B3621 !important; /* Warna coklat tua */
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    align-self: flex-start; /* Tombol sejajar kiri */
+    box-shadow: 0 4px 15px rgba(240, 167, 48, 0.3);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek hover */
+.paragraphcontainer > a:hover {
+    background-color: #6F4E37; /* Warna espresso */
+    color: #f0a730 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 167, 48, 0.4);
+    border-color: #f0a730;
+}
+
+/* Optional: Tambahkan animasi "glow" */
+.paragraphcontainer > a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+    );
+    transition: 0.5s;
+}
+
+.paragraphcontainer > a:hover::after {
+    left: 100%;
+}
+.imagecontainer{
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+@media (max-width: 768px) {
+    .paragraphcontainer {
+        margin-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .paragraphcontainer > a {
+        align-self: center; /* Tombol di tengah saat mobile */
+    }
+
+    .paragraphcontainer > h1 {
+        font-size: 2.5rem;
+    }
+    .imagecontainer{
+        display: none;
+    }
+}
+
+.footer{
+    display: block;
+    text-align: center;
+}
